@@ -1,0 +1,28 @@
+#list-all{
+    background-color: lightblue;
+    border: 2px solid blue;
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.list{
+    background-color:white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.list div{
+    display: inline-block;
+
+    font-size: 30px;
+}
+.list button{
+    display: block;
+    float: right;
+    margin-left: 20px;
+    border: 2px solid blue;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 25px;
+}
