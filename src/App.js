@@ -1,19 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import List from './List';
+import ListAll from './ListAll';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      list: [
+        {key:1,value:'list-1'},
+        {key:2,value:'list-2'}
+      ]
+    };
+  };
+  setList =()=>{
+    
+  };
+  
+  edit = () =>{
+
+  };
+  delete = () =>{
+
+  };
   render() {
+    let showList = this.state.list.map((key)=>{
+      return(
+        <List dataList={key.value} 
+              onClickEdit={this.edit} 
+              onClickDel={this.delete}/>
+      );
+    });
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <div id='name-list'><center>TO DO LIST</center></div>
+        <ListAll>
+          <div>{showList}</div>
+        </ListAll>
       </div>
+     
     );
   }
 }
