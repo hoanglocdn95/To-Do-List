@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.delete = this.delete.bind(this);
     this.edit = this.edit.bind(this);
-    this.setList = this.setList.bind(this);
+    this.add = this.add.bind(this);
     this.state = {
       list: [
         {key:1,value:'list-1'},
@@ -18,11 +18,11 @@ class App extends Component {
       ]
     };
   };
-  setList =()=>{
+  edit =()=>{
     
   };
   
-  edit = () =>{
+  add = () =>{
     var a = document.getElementById('value').value;
     const arr = this.state.list;
     const arr2=[{key: arr[arr.length-1].key +1, value: a }];
@@ -50,7 +50,7 @@ class App extends Component {
     return (
       <div>
         <div id='name-list'><center>TO DO LIST</center></div>
-        <Create onClickAdd={this.edit}/>
+        <Create onClickAdd={this.add}/>
         <ListAll>
           <div>{showList}</div>
         </ListAll>
