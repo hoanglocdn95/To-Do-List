@@ -12,12 +12,23 @@
     border: 1px solid black;
     border-radius: 10px;
 }
-.list div{
+.list .input-list{
     display: inline-block;
     font-size: 30px;
 }
+.list .input-edit{
+    font-size: 30px;
+}
 .list button{
-    display: block;
+    display: inline-block;
+    float: right;
+    margin-left: 20px;
+    border: 1px solid grey;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 25px;
+}
+.list .button-save{
     float: right;
     margin-left: 20px;
     border: 1px solid grey;
