@@ -2,26 +2,37 @@ import React, { Component } from 'react';
 import './style.css';
 
 class Create extends Component{
-    clickAdd =()=>{
-        document.getElementById('add').style.display= 'none';
-        document.getElementById('submit').style.display= 'inline-block';
-        document.getElementById('value').style.display= 'inline-block';
+    constructor(props){
+        super(props);
+        this.state = {
+          add: 'inline-block',
+          submit: 'none',
+          value: 'none'
+        };
     };
-    clickCreate =()=>{
-        if (document.getElementById('add').style.display === 'none' &&
-            document.getElementById('submit').value === ''){
-            document.getElementById('add').style.display= 'inline-block';
-            document.getElementById('submit').style.display= 'none';
+    checkDisplay =()=>{
+        if(this.state.add === 'inline-block'){
+            this.setState({
+                add: 'none',
+                submit: 'inline-block',
+                value: 'inline-block'
+            });
+        } else{
+            this.setState({
+                add: 'inline-block',
+                submit: 'none',
+                value: 'none'
+            });
         }
     };
     render(){
         return(
             <form>
-                <input id="add" type="button" value="New" 
-                    onClick={this.clickAdd.bind(this)}/>
-                <input id="value" style={{display: 'none'}} type="text"/>
-                <input id="submit" style={{display: 'none'}} type="button" value="Create"
-                    onClick={this.clickCreate.bind(this)} 
+                <input id="add" type="button" value="New" style={{display: this.state.add}}
+                    onClick={this.checkDisplay}/>
+                <input id="value" style={{display: this.state.value}} type="text"/>
+                <input id="submit" style={{display: this.state.submit}} type="button" value="Create"
+                    onClick={this.checkDisplay}
                     onClick={this.props.onClickAdd}/>
             </form>
         )
